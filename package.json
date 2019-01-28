@@ -1,0 +1,27 @@
+{
+  "name": "contributors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Bpazy/contributors.git"
+  },
+  "author": "Bpazy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bpazy/contributors/issues"
+  },
+  "homepage": "https://github.com/Bpazy/contributors#readme",
+  "dependencies": {
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.39"
+  }
+}
