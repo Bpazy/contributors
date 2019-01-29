@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+     width="100%" height="100%">
+    <defs>
+        <pattern id="avatar" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+            <image id="avatar" width="1" height="1" xlink:href="https://avatars3.githubusercontent.com/u/9838749?v=4"/>
+        </pattern>
+        <style>
+            circle {
+                stroke: #c5c8cd;
+                stroke-width: 3px;
+            }
+        </style>
+    </defs>
+    <a href="https://github.com/Bpazy" id="Bpazy"><circle cx="30" cy="30" r="24" fill="url(#avatar)"/></a>
+    <a href="https://github.com/Bpazy" id="Bpazy"><circle cx="84" cy="30" r="24" fill="url(#avatar)"/></a>
+</svg>
