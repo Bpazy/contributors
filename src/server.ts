@@ -14,7 +14,8 @@ router.get('/contributors/:owner/:repo.svg', async (ctx) => {
             htmlUrl: c.html_url ? c.html_url : '',
         }
     });
-    ctx.body = Portrait.build(portraitArr, ctx.query.number)
+    ctx.body = Portrait.build(portraitArr, ctx.query.number);
+    ctx.set('content-type', 'image/svg+xml; charset=utf-8');
 });
 
 app.use(router.routes());
