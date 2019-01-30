@@ -11,10 +11,10 @@ router.get('/contributors/:owner/:repo', async (ctx) => {
     const portraitArr = contributors.map(c => {
         return {
             avatarUrl: c.avatar_url ? c.avatar_url : '',
-            htmlUrl: c.html_url ? c.html_url : ''
+            htmlUrl: c.html_url ? c.html_url : '',
         }
     });
-    ctx.body = Portrait.build(portraitArr)
+    ctx.body = Portrait.build(portraitArr, ctx.query.number)
 });
 
 app.use(router.routes());

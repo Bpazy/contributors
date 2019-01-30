@@ -16,7 +16,7 @@ const svgA = `<defs>
                 }
             </style>
         </defs>
-        <a href="{href}"><circle cx="{cx}" cy="{cy}" r="24" fill="url(#{avatarId})"/></a>
+        <a href="{htmlUrl}"><circle cx="{cx}" cy="{cy}" r="24" fill="url(#{avatarId})"/></a>
     `;
 
 interface Portrait {
@@ -24,19 +24,27 @@ interface Portrait {
     htmlUrl: string
 }
 
-function build(portraits: Portrait[]): string {
+const padding = 6;
+const radius = 24;
+const diameter = radius * 2;
+
+function build(portraits: Portrait[], lineNumber: number = 10): string {
     let aArrString = "";
     for (let i = 0; i < portraits.length; i++) {
-        const cx = 6 + 6 * i + 24 + i * 48;
+        const curLine = Math.floor(i / lineNumber);
+        const curLineIndex = i % lineNumber;
+
+        const cx = padding + padding * curLineIndex + radius + curLineIndex * diameter;
+        const cy = padding + padding * curLine + radius + curLine * diameter;
+
         aArrString += svgA.replace('{htmlUrl}', portraits[i].htmlUrl)
             .replace(/{imgUrl}/g, portraits[i].avatarUrl)
             .replace(/{avatarId}/g, 'avatarId' + i)
             .replace(/{cx}/g, cx + '') // Set avatar X coordinate
-            .replace(/{cy}/g, 30 + '') // Set avatar Y coordinate
+            .replace(/{cy}/g, cy + ''); // Set avatar Y coordinate
     }
     return svgMain.replace("{svg}", aArrString)
         .replace(/\r?\n|\r/g, '') // Remove white space
-
 }
 
 export {Portrait}
