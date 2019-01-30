@@ -3,22 +3,22 @@ import http from '../util/http'
 interface Contributor {
     login?: string;
     id?: number;
-    nodeId?: string;
-    avatarUrl?: string;
-    gravatarId?: string;
+    node_id?: string;
+    avatar_url?: string;
+    gravatar_id?: string;
     url?: string;
-    htmlUrl?: string;
-    followersUrl?: string;
-    followingUrl?: string
-    giftsUrl?: string;
-    starredUrl?: string;
-    subscriptionsUrl?: string;
-    organizationsUrl?: string;
-    reposUrl?: string;
-    eventsUrl?: String;
-    receivedEventsUrl?: string;
+    html_url?: string;
+    followers_url?: string;
+    following_url?: string
+    gifts_url?: string;
+    starred_url?: string;
+    subscriptions_url?: string;
+    organizations_url?: string;
+    repos_url?: string;
+    events_url?: String;
+    received_events_url?: string;
     type?: string;
-    siteAdmin?: boolean;
+    site_admin?: boolean;
     contributions?: number;
 }
 
