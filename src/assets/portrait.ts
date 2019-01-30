@@ -7,7 +7,7 @@ const svgMain = `<?xml version="1.0" encoding="utf-8"?>
 
 const svgA = `<defs>
             <pattern id="{avatarId}" width="100%" height="100%" patternContentUnits="objectBoundingBox">
-                <image width="1" height="1" xlink:href="{imgUrl}"/>
+                <image width="1" height="1" xlink:href="{imgHref}"/>
             </pattern>
             <style>
                 circle {
@@ -20,7 +20,7 @@ const svgA = `<defs>
     `;
 
 interface Portrait {
-    avatarUrl: string
+    avatarHref: string
     htmlUrl: string
 }
 
@@ -38,7 +38,7 @@ function build(portraits: Portrait[], lineNumber: number = 10): string {
         const cy = padding + padding * curLine + radius + curLine * diameter;
 
         aArrString += svgA.replace('{htmlUrl}', portraits[i].htmlUrl)
-            .replace(/{imgUrl}/g, portraits[i].avatarUrl)
+            .replace(/{imgHref}/g, portraits[i].avatarHref)
             .replace(/{avatarId}/g, 'avatarId' + i)
             .replace(/{cx}/g, cx + '') // Set avatar X coordinate
             .replace(/{cy}/g, cy + ''); // Set avatar Y coordinate
