@@ -6,7 +6,7 @@ import Portrait from './assets/portrait'
 const app = new Koa();
 const router = new Router();
 
-router.get('/contributors/:owner/:repo', async (ctx) => {
+router.get('/contributors/:owner/:repo.svg', async (ctx) => {
     const contributors = await ReposApi.listContributors(ctx.params.owner, ctx.params.repo);
     const portraitArr = contributors.map(c => {
         return {
