@@ -7,5 +7,5 @@
 ### Build
 ```
 tsc
-npm run dist/server.js
+node dist/server.js
 ```
