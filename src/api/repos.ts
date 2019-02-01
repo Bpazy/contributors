@@ -23,7 +23,11 @@ interface Contributor {
 }
 
 async function listContributors(owner: string, repo: string): Promise<Contributor[]> {
-    const contributors = (await http.get<Contributor[]>(`/repos/${owner}/${repo}/contributors`)).data
+    const response = await http.get<Contributor[]>(`/repos/${owner}/${repo}/contributors`);
+    if (response.status != 200) {
+        return Promise.reject('repository not exists');
+    }
+    const contributors = response.data;
     return Promise.resolve(contributors)
 }
 
