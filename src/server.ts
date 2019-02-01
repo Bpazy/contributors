@@ -3,7 +3,7 @@ import Router from 'koa-router';
 import ReposApi from './api/repos'
 import Portrait, {Portrait as P} from './assets/portrait'
 import Commander from 'commander'
-import Image from './util/image'
+import {Image} from './util/image'
 
 Commander
     .option('-p, --port <port>', 'server port', 3000)
